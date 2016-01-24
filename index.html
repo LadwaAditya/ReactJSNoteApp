@@ -9,7 +9,6 @@
     <script src="js\jquery.min.js"></script>
     <script src="js\jquery-ui.min.js"></script>
 
-
     <!-- Bootstrap -->
     <link href="css\bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="js\bootstrap.min.js"></script>
@@ -23,19 +22,19 @@
   </head>
   <body>
     <div id="react-container"></div>
-    <script type="text/babel" >
+    <script type="text/babel">
 
       var Note = React.createClass({
-          render: function(){
-              return(<div>
-                hello World
-              </div>);
-          }
-      });
+              render: function(){
+                  return(<div className="note"></div>);
+              }
+          });
+
 
 
       React.render(<Note/>,document.getElementById('react-container'));
 
+
     </script>
 </body>
-</html> 
+</html>
