@@ -71,9 +71,33 @@
               }
           });
 
+          var Board = React.createClass({
+            propTypes:{
+              count:function(props,propName){
+                if(typeof props[propName] !== "number"){
+                  return new Error('The count property must be a number');
+                }
+                if(props[propName] > 100){
+                  return new Error("Cannot create 100 notes" );
+                }
+              }
+            },
+            getInitialState: function(){
+              return{
+                notes:[
+                  'Note 1',
+                  'Note 2'
+                ]
+              };
+            },
+            render:function(){
+              return (<div className="board">{this.props.count}</div>)
+            }
+          });
 
 
-      React.render(<Note>Hello World</Note>,document.getElementById('react-container'));
+
+      React.render(<Board count={10}/>,document.getElementById('react-container'));
 
 
     </script>
